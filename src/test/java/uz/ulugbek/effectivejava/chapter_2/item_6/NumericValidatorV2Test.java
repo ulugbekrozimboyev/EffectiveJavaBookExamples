@@ -20,7 +20,7 @@ class NumericValidatorV2Test {
 //            System.out.println(number);
             assertTrue(RomanNumericValidatorV2.isRomanNumeric(number));
         });
-//        incorrectValues.forEach(number -> assertFalse(RomanNumericValidatorV2.isRomanNumeric(number)));
+        NumericValidatorTest.incorrectValues.forEach(number -> assertFalse(RomanNumericValidatorV2.isRomanNumeric(number)));
 
         System.out.println("test two is finished at: " + (System.currentTimeMillis() - start));
     }

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NumericValidatorTest {
 
-    public static List<String> correctValues =
+    public static final List<String> correctValues =
             List.of("I", "III", "II",
                     "V", "IV", "VI", "VII", "VIII",
                     "IX", "X", "XI", "XV", "XIV", "XVI", "XX", "XXII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII",
@@ -17,7 +17,7 @@ class NumericValidatorTest {
                     "C", "CLV", "CX", "XC",
                     "D", "CD", "DC",
                     "M", "MD", "CM", "MC", "MMC");
-    List<String> incorrectValues = List.of("1234", "XXi", "2XX", "vL", "X2", "VX");
+    public static final List<String> incorrectValues = List.of("1234", "XXi", "2XX", "vL", "X2", "VX");
 
 //    @Test
     @RepeatedTest(value = 10)
@@ -29,7 +29,7 @@ class NumericValidatorTest {
 //            System.out.println(number);
             assertTrue(RomanNumericValidatorV2.isRomanNumeric(number));
         });
-//        incorrectValues.forEach(number -> assertFalse(RomanNumericValidator.isRomanNumeric(number)));
+        incorrectValues.forEach(number -> assertFalse(RomanNumericValidator.isRomanNumeric(number)));
 
         System.out.println("test one is finished at: " + (System.currentTimeMillis() - start));
     }
